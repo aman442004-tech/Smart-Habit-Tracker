@@ -10,14 +10,15 @@ class habit{
     public:
     habit(){
     
-        cout<<"Enter Task and Id";
-        cin>>hname>>id;
+        cout<<"Enter Task and Id : ";
+        getline(cin,hname);
+        cin>>id;
         streak=0;
         cout<<"Habit Created : "<<hname<<endl;
     
     }
     ~habit(){
-    cout<<"Habit Destroyed"<<hname<<endl;
+    cout<<"Habit Destroyed "<<hname<<endl;
     }
 
 
@@ -40,6 +41,10 @@ void habit::markcomplete(){
 
 int main(){
 
+    habit h1;
+    h1.markcomplete();
+    habit h2(h1);
 
+    h2.markcomplete();
     return 0;
 }
